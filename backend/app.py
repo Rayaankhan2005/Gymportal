@@ -10,7 +10,9 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 app.secret_key = 'your_super_secret_key_gym_portal'
 CORS(app)
 
-DB_NAME = "gym.db"
+import os
+DB_NAME = os.path.join(os.path.dirname(__file__), "gym.db")
+
 
 def init_db():
     with sqlite3.connect(DB_NAME) as conn:

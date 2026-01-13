@@ -5,6 +5,8 @@ import os
 
 # Configure Flask to serve static files/templates
 app = Flask(__name__, static_folder='static', template_folder='templates')
+
+
 app.secret_key = 'your_super_secret_key_gym_portal'
 CORS(app)
 
